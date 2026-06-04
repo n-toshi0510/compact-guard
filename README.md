@@ -49,6 +49,64 @@ compact-guard pre-compact prompt
 
 compact-guard はこの workflow の外側にある documentation layer です。Compaction 自体は、利用中の AI coding agent が提供する既存機能で実行します。
 
+## Copy-Paste Usage
+
+compact-guard itself has no CLI command, no package install, no runtime, and no automation in the MVP. The following examples are manual copy-paste workflows using the Markdown prompt files in this repository.
+
+### Codex CLI
+
+1. Open or copy [prompts/pre-compact.md](prompts/pre-compact.md).
+2. Paste it into Codex before running `/compact`.
+3. Run `/compact`.
+4. Open or copy [prompts/post-compact-evaluation.md](prompts/post-compact-evaluation.md).
+5. Paste it with the compacted summary.
+6. If the outcome is `repair-needed` or `unsafe-to-resume`, use [prompts/repair.md](prompts/repair.md).
+7. If the outcome is `pass` or repaired, use [prompts/resume.md](prompts/resume.md).
+
+```text
+cat prompts/pre-compact.md
+/compact
+cat prompts/post-compact-evaluation.md
+cat prompts/repair.md
+cat prompts/resume.md
+```
+
+### Claude Code
+
+1. Open or copy [prompts/pre-compact.md](prompts/pre-compact.md).
+2. Paste it into Claude Code before running `/compact`.
+3. Run `/compact [optional focus instructions]`.
+4. Open or copy [prompts/post-compact-evaluation.md](prompts/post-compact-evaluation.md).
+5. Paste it with the compacted summary.
+6. If the outcome is `repair-needed` or `unsafe-to-resume`, use [prompts/repair.md](prompts/repair.md).
+7. If the outcome is `pass` or repaired, use [prompts/resume.md](prompts/resume.md).
+
+```text
+cat prompts/pre-compact.md
+/compact [optional focus instructions]
+cat prompts/post-compact-evaluation.md
+cat prompts/repair.md
+cat prompts/resume.md
+```
+
+### Gemini CLI
+
+1. Open or copy [prompts/pre-compact.md](prompts/pre-compact.md).
+2. Paste it into Gemini CLI before running `/compress`.
+3. Run `/compress`.
+4. Open or copy [prompts/post-compact-evaluation.md](prompts/post-compact-evaluation.md).
+5. Paste it with the compacted summary.
+6. If the outcome is `repair-needed` or `unsafe-to-resume`, use [prompts/repair.md](prompts/repair.md).
+7. If the outcome is `pass` or repaired, use [prompts/resume.md](prompts/resume.md).
+
+```text
+cat prompts/pre-compact.md
+/compress
+cat prompts/post-compact-evaluation.md
+cat prompts/repair.md
+cat prompts/resume.md
+```
+
 ## Supported Agent Workflows
 
 compact-guard は vendor-neutral な policy / rubric を中心に設計しています。MVP では、次の手動 adoption guide を提供します。
